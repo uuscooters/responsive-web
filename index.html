@@ -9,13 +9,25 @@
   <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet" />
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-
-  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 </head>
 
 <body id="top">
+  <header>
+    <h2><a href="#" target="_blank"><img src="img/logo.png" alt=""></a></h2>
+    <nav>
+      <ul>
+        <li><a href="#top">Top</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#getting-around">Travel</a></li>
+        <li><a href="#famous-quotes">Quotes</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#social-media">Links</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- ************************** -->
   <div id="hero">
     <div class="background-image">
       <h1>Beautiful Alaskan Photo Portfolio</h1>
@@ -91,6 +103,46 @@
     </ul>
   </div>
   <!-- ************************** -->
+  <div id="famous-quotes">
+    <h3 class="title">What Others Our Saying</h3>
+    <p class="portrait"><img src="img/dickens.jpg" alt="Charles Dickens" class="portrait-photos"></p>
+    <p class="quote">&ldquo;No one is useless in this world who lightens the burden of it to anyone else.
+      &rdquo;</p>
+    <p class="author">&mdash; Charles Dickens</p>
+
+    <p class="portrait"><img src="img/franklin.jpg" alt="Benjamin Franklin" class="portrait-photos"></p>
+    <p class="quote">&ldquo;An investment in knowledge pays the best interest.&rdquo;</p>
+    <p class="author">&mdash; Benjamin Franklin</p>
+
+    <p class="portrait"><img src="img/leonardo.jpg" alt="Leonardo da Vinci" class="portrait-photos"></p>
+    <p class="quote">&ldquo;Learning never exhausts the mind.&rdquo;</p>
+    <p class="author">&mdash; Leonardo da Vinci</p>
+    <hr>
+  </div>
+  <!-- ************************** -->
+  <div id="contact">
+    <h3 class="title">My Studio Location</h3>
+    <section class="flexbox-section">
+      <p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.2362244884555!2d106.86881782916714!3d-6.401101666966285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjQnMDQuMCJTIDEwNsKwNTInMDkuNyJF!5e0!3m2!1sen!2sid!4v1584857760814!5m2!1sen!2sid"
+          width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+          tabindex="0"></iframe>
+      </p>
+      <p>
+        Jln. Raya Nangka <br>
+        Cimanggis, Kota Depok, 16955 <br>
+        Indonesia
+      </p>
+    </section>
+  </div>
+  <!-- ************************** -->
+  <div id="contact-form">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSeTpQ33iYV99zZ-PvPupIFYHUGbzK0WbDmM1b7F6ZkRvIy9WQ/viewform?embedded=true"
+      width="100%" height="1250" frameborder="0" marginheight="0" marginwidth="0">Memuat…</iframe>
+  </div>
+  <!-- ************************** -->
   <footer id="social-media">
     <ul>
       <li>
@@ -106,7 +158,7 @@
         <a href="#" target="_blank"><i class="fab fa-pinterest-square"></i></a>
       </li>
     </ul>
-    <p>
+    <p>&ldquo;x&rdquo;
       &copy;
       <script>
         document.write(new Date().getFullYear());
@@ -120,6 +172,22 @@
       &mdash;Benjamin Franklin
     </p>
   </footer>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+
+        var target = this.hash;
+        var $target = $(target);
+
+        $('html, body').stop().animate({
+          'scrollTop': $target.offset().top - 100
+        }, 900, 'swing', function () {
+          window.location.hash = target - 100;
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
